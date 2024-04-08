@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="../myapp/assets/css/styles.css" rel="stylesheet" />
+    <link href="../myapp/assets/css/spapp.css" rel="stylesheet" />
+    <link href="../myapp/assets/css/user.css" rel="stylesheet" />
+    <link href="../myapp/assets/css/login.css" rel="stylesheet" />
+    <link href="../myapp/assets/css/booking.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <nav class="navigation navbar navbar-expand-lg navbar-light backdrop fixed-top py-3" id="mainNav"
+        style="background-image: none; background-color: rgba(150, 150, 150, 0.43); transition: none 0s ease 0s;">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">Local Barbershop</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse col-sm-6" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-link"><a class="nav-item" href="#landing">Landing</a></li>
+                    <li class="nav-link"><a class="nav-item" href="#booking">Booking</a></li>
+                    <li class="nav-link"><a class="nav-item" href="#profile">Profile</a></li>
+                    <li class="nav-link"><a class="nav-item" href="#login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <main id="spapp" role="main">
+                    <section id="booking" data-load="booking.html"></section>
+                    <section id="login" data-load="login.html"></section>
+                    <section id="profile" data-load="profile.html"></section>
+                    <section id="landing" data-load="landing.html"></section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-muted">Copyright &copy; 2024 - <a
+                    href="https://www.linkedin.com/in/tarik-karahodzic/">Tarik Karahodzic</a></div>
+        </div>
+    </footer>
+</body>
+
+<script src="../myapp/assets/js/jquery.min.js"></script>
+<script src="../myapp/assets/js/jquery.spapp.min.js"></script>
+<script src="../myapp/assets/js/scripts.js"></script>
+<script src="../myapp/assets/js/login_script.js"></script>
+<script src="../myapp/assets/js/booking.js"></script>
+<script src="../myapp/assets/js/profile.js"></script>
+
+<script>
+    var app = $.spapp({
+        templateDir: "./vtpl/"
+    });
+
+    app.run();
+</script>
+
+</html>
