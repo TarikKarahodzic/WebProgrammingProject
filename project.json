@@ -1,0 +1,58 @@
+{
+    "barbers": [
+        {
+            "name": "Barber One",
+            "phoneNumber": "+387 61 654 321",
+            "image": "assets/img/hasbi.jpg"
+        },
+        {
+            "name": "Barber Two",
+            "phoneNumber": "+387 62 654 321",
+            "image": "assets/img/hasbi1.jpg"
+        },
+        {
+            "name": "Barber Three",
+            "phoneNumber": "+387 63 654 321",
+            "image": "assets/img/hasbi2.jpg"
+        }
+    ],
+    "users": [
+        {
+            "name": "john Doe",
+            "username": "JohnDoe",
+            "email": "info@example.com",
+            "phoneNumber": "+387 64 123 456",
+            "password": "john123",
+            "image": "assets/img/profile.png"
+        }
+    ],
+    "serviceTable": [
+        {
+            "services": {
+                "service1": "Sisanje kose",
+                "service2": "Sisanje duze kose",
+                "service3": "Pranje kose",
+                "service4": "Oblikovanje brade",
+                "service5": "Sisanje + brada",
+                "service6": "Farbanje kratke brade",
+                "service7": "Farbanje duze brade",
+                "service8": "Farbanje kose",
+                "service9": "Blajhanje kose",
+                "service10": "Depilacija voskom"
+            },
+            "prices": {
+                "price1": "15,00 KM",
+                "price2": "20,00 KM",
+                "price3": "5,00 KM",
+                "price4": "10,00 KM",
+                "price5": "20,00 KM",
+                "price6": "5,00 KM",
+                "price7": "10,00 KM",
+                "price8": "40,00 KM",
+                "price9": "50,00 KM",
+                "price10": "5,00 KM"
+            }
+        }
+    ]
+    
+}

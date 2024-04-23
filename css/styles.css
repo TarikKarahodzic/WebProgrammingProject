@@ -11714,7 +11714,7 @@ header.masthead .h1 {
   margin: 0 auto;
   border-collapse: collapse;
 }
-#services, th, td {
+#services, td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;

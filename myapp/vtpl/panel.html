@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="kontejnjer">
+    <section class="barbers">
+        <div class="add_barber">
+          <h1 class="servisTitl">Add a new barber</h1>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Barber full name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Barber email</label>
+              <input type="email" class="form-control" id="exampleInputPassword1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Phone number</label>
+              <input type="email" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+    </section>
+    <section class="news">
+        <div class="add_news">
+          <h1 class="servisTitl">Add news</h1>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">News title</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">News description</label>
+              <textarea type="email" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">News date</label>
+              <input type="email" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="add_service">
+          <h1 class="servisTitl">Add a new service</h1>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Service type</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Service description</label>
+              <textarea type="email" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Service price</label>
+              <input type="email" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+    </section>
+  </div>
+</body>
+
+</html>
+
+<!--
+
+Flight::route("GET /getExamById/@id", function($id){
+  $examsService = new ExamsService();
+
+  $result = $examsService -> get_by_id($id);
+
+  if($result) {
+    Flight::json(['result' => $result ]);
+  } else {
+    Flight::json(['message' => 'Failed to ghet an exam!']);
+  }
+}) 
+
+-->
