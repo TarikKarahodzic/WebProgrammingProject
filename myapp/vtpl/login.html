@@ -1,44 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<body id="loginBody">
-    <div class="container" id="container" style="display: flex; justify-content: center;  align-items: center;">
-        <div class="containerLogin" id="containerLogin">
-            <div class="form-containerLogin sign-up">
-                <form>
-                    <h1>Create Account</h1>
-                    <input type="text" placeholder="name">
-                    <input type="email" placeholder="email">
-                    <input type="password" placeholder="password">
-                    <a href=""><button type="button">Sign Up</button></a>
-                </form>
-            </div>
-            <div class="form-containerLogin sign-in">
-                <form>
-                    <h1>Sign In</h1>
-                    <input type="email" placeholder="email">
-                    <input type="password" placeholder="password">
-                    <button type="button"><a href=#landing>Sign In</a></button>
-                </form>
-            </div>
-    
-            <div class="toggle-containerLogin">
-                <div class="toggle">
-                    <div class="toggle-panel toggle-left">
-                        <h1>Welcome Back!</h1>
-                        <p>Enter Your Personal Details to use all of the site features</p>
-                        <button class="hidden" id="login">Sign In</button>
-                    </div>
-                    <div class="toggle-panel toggle-right">
-                        <h1>Hello!</h1>
-                        <p>Register with your personal details to use all of the site features</p>
-                        <button class="hidden" id="register">Sign Up</button>
-                    </div>
+<body>
+    <section id="profile-bg">
+        <div class="wrapper" id="login">
+            <div class="login_box">
+                <div class="login-header">
+                    <span>Login</span>
+                </div>
+                <div class="input_box">
+                    <input type="text" id="user" class="input-field" required>
+                    <label for="user" class="label">Email</label>
+                    <i class="bx bx-user ikona"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" id="pass" class="input-field" required>
+                    <label for="pass" class="label">Password</label>
+                    <i class="bx bx-lock-alt ikona"></i>
+                </div>
+                <div class="input_box">
+                    <input type="submit" class="input-submit" value="Login">
+                </div>
+                <div class="register">
+                    <span><a href="#register">Don't have an account?</a></span>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </body>
-<script></script>
-
 </html>

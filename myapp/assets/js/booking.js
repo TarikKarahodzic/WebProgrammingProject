@@ -11,7 +11,7 @@ $(document).ready(function () {
 					<img class="postcard__img" src='${barber.image}' alt="Image Title" />
 				</a>
 				<div class="postcard__text t-dark">
-					<h1 class="postcard__title blue">Hasbulla</h1>
+					<h1 class="postcard__title ">Hasbulla</h1>
 					<div class="postcard__bar"></div>
 					<ul>
 						<li><i class="fas fa-tag mr-2"></i>${barber.name}</li>

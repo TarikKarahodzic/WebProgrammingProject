@@ -9,19 +9,20 @@ $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;*/
 
 /* This pen */
-body {
+
+#bookingPage {
 	font-family: "Baloo 2", cursive;
 	font-size: 16px;
 	color: #ffffff;
 	text-rendering: optimizeLegibility;
 	font-weight: initial;
-    margin-top: 70px;
+  margin-top: 70px;
+  text-decoration: none;
 }
 
 .dark {
 	background: #110f16;
 }
-
 
 .light {
 	background: #f3f5f7;
