@@ -1,86 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<body>
-  <div class="kontejnjer">
-    <section class="barbers">
-        <div class="add_barber">
-          <h1 class="servisTitl">Add a new barber</h1>
-          <form>
-            <div class="mb-3">
-              <label class="form-label">Barber full name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Barber email</label>
-              <input type="email" class="form-control" id="exampleInputPassword1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Phone number</label>
-              <input type="email" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+<div class="container-fluid px-4" id="desbord">
+  <h1 class="mt-4">Dashboard</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Dashboard</li>
+  </ol>
+  <div class="row">
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-primary text-white mb-4">
+        <div class="card-body">Add a barber</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add-barber-modal">
+            Add
+          </button>
+          <div class="small text-white">
+            <i class="fas fa-angle-right"></i>
+          </div>
         </div>
-    </section>
-    <section class="news">
-        <div class="add_news">
-          <h1 class="servisTitl">Add news</h1>
-          <form>
-            <div class="mb-3">
-              <label class="form-label">News title</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">News description</label>
-              <textarea type="email" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">News date</label>
-              <input type="email" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-warning text-white mb-4">
+        <div class="card-body">Add a service</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add-barber-modal">
+            Add
+          </button>
+          <div class="small text-white">
+            <i class="fas fa-angle-right"></i>
+          </div>
         </div>
-    </section>
-
-    <section class="services">
-        <div class="add_service">
-          <h1 class="servisTitl">Add a new service</h1>
-          <form>
-            <div class="mb-3">
-              <label class="form-label">Service type</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Service description</label>
-              <textarea type="email" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Service price</label>
-              <input type="email" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-success text-white mb-4">
+        <div class="card-body">Add news</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add-barber-modal">
+            Add
+          </button>
+          <div class="small text-white">
+            <i class="fas fa-angle-right"></i>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-danger text-white mb-4">
+        <div class="card-body">Danger Card</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <a class="small text-white stretched-link" href="#">View Details</a>
+          <div class="small text-white">
+            <i class="fas fa-angle-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</body>
+  <div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      List of barbers
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover table-responsive" id="tbl_barbers">
+          <thead>
+            <tr>
+              <th data-name="action">Actions</th>
+              <th data-name="full_name">Full name</th>
+              <th data-name="phone_number">Phone number</th>
+              <th data-name="email">Email</th>
+              <th data-name="password">Password</th>
+              <th data-name="start_time">Work start time</th>
+              <th data-name="end_time">Work end time</th>
+              <th data-name="days_off">Days off</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
-</html>
+<div class="modal fade" id="add-barber-modal" tabindex="-1" aria-labelledby="add-barber-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="add-barber-form">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-barber-label">Add barber</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="id" id="id" />
+          <div class="mb-3">
+            <label for="first_name" class="col-form-label">Full name</label>
+            <input type="text" class="form-control" name="full_name" id="fullName" />
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="col-form-label">Phone number</label>
+            <input type="tel" class="form-control" name="phone_number" id="phoneNumber" />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="col-form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="col-form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" />
+          </div>
+          <div class="mb-3">
+            <label for="start_time" class="col-form-label">Work start time</label>
+            <input type="time" class="form-control" name="start_time" id="startTime" />
+          </div>
+          <div class="mb-3">
+            <label for="end_time" class="col-form-label">Work end time</label>
+            <input type="time" class="form-control" name="end_time" id="endTime" />
+          </div>
+          <div class="mb-3">
+            <label for="days_off" class="col-form-label">Days off</label>
+            <input type="text" class="form-control" name="days_off" id="daysOff" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="cancel" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Add barber</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
-<!--
+<script>
+  BarberService.reload_barbers_datatable();
 
-Flight::route("GET /getExamById/@id", function($id){
-  $examsService = new ExamsService();
+  FormValidation.validate("#add-barber-form", {}, function (data) {
+    Utils.block_ui("#add-barber-modal");
+    $('#add-barber-modal button[type="cancel"]').trigger("click");
 
-  $result = $examsService -> get_by_id($id);
-
-  if($result) {
-    Flight::json(['result' => $result ]);
-  } else {
-    Flight::json(['message' => 'Failed to ghet an exam!']);
-  }
-}) 
-
--->
+    $.post(Constants.API_BASE_URL + "add_barber.php", data)
+      .done(function (data) {
+        Utils.unblock_ui("#add-barber-modal");
+        $("#add-barber-modal").modal("toggle");
+        toastr.success("You have successfully added the barber.");
+        BarberService.reload_barbers_datatable();
+      })
+      .fail(function (xhr) {
+        toastr.error(error);
+      })
+  });
+</script>
