@@ -1,5 +1,12 @@
 {
     "require": {
-        "flightphp/core": "^3.8"
+        "zircote/swagger-php": "^4.9",
+        "doctrine/annotations": "^2.0",
+        "flightphp/core": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Web\\": "api/"
+        }
     }
 }
