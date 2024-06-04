@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../myapp/assets/css/styles.css" rel="stylesheet" />
@@ -12,7 +11,6 @@
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -43,8 +41,8 @@
                     <section id="login" data-load="login.html"></section>
                     <section id="register" data-load="register.html"></section>
                     <section id="profile" data-load="profile.html"></section>
-                    <section id="landing" data-load="landing.html"></section>
                     <section id="panel" data-load="panel.html"></section>
+                    <section id="landing" data-load="landing.html"></section>
                 </main>
             </div>
         </div>
@@ -60,30 +58,59 @@
 
 <script src="../myapp/assets/js/jquery-3.7.1-latest.js"></script>
 <script src="../myapp/assets/js/jquery.min.js"></script>
+<script src="../myapp/assets/js/block-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 <script src="../myapp/assets/js/jquery.spapp.min.js"></script>
 <script src="../myapp/assets/js/jquery.validate.min.js"></script>
 <script src="../myapp/assets/js/dataTables-latest.js"></script>
-<script src="../myapp/assets/js/block-ui.js"></script>
 <script src="../myapp/assets/js/toastr.js"></script>
 
-
 <script src="../myapp/assets/js/booking.js"></script>
-<script src="../myapp/assets/js/profile.js"></script>
 <script src="../myapp/assets/js/app.js"></script>
 <script src="../myapp/assets/js/scripts.js"></script>
-
-<script src="../myapp/services/barbers.js"></script>
 <script src="../myapp/utils/utils.js"></script>
+<script src="../myapp/assets/js/forms.js"></script>
+
+
 <script src="../myapp/utils/constants.js"></script>
 <script src="../myapp/utils/form_validation.js"></script>
 <script src="../myapp/utils/rest_client.js"></script>
 
-<script>
-    var app = $.spapp({
-        templateDir: "./vtpl/"
-    });
+<script src="../myapp/services/barbers.js"></script>
+<script src="../myapp/services/services.js"></script>
+<script src="../myapp/services/appointments.js"></script>
+<script src="../myapp/assets/js/profile.js"></script>
 
-    app.run();
+<script>
+    function isLoggedIn() {
+        return localStorage.getItem('user') !== null;
+        return userData !== null && userData.token !== undefined;
+    }
+
+    // Function to redirect to login if not logged in
+    function ensureAuth() {
+        if (!isLoggedIn()) {
+            const currentHash = window.location.hash;
+            if (currentHash !== '#login' && currentHash !== '#register') {
+                window.location.hash = '#login';
+            }
+        }
+    }
+
+    // Function to initialize SPA routes and check login status
+    function initApp() {
+        // Initialize the SPA application
+        Utils.init_spapp();
+
+        // Check login status on initial load
+        ensureAuth();
+
+        // Check login status on route change
+        window.addEventListener('hashchange', ensureAuth);
+    }
+
+    // Call the initApp function on document ready
+    document.addEventListener('DOMContentLoaded', initApp);
 </script>
 
 </html>

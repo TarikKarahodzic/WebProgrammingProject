@@ -63,7 +63,7 @@ class Route
     /**
      * The middleware to be applied to the route
      *
-     * @var array<int, callable|object|string>
+     * @var array<int, callable|object>
      */
     public array $middleware = [];
 
@@ -226,7 +226,7 @@ class Route
     /**
      * Sets the route middleware
      *
-     * @param array<int, callable|string>|callable|string $middleware
+     * @param array<int, callable>|callable $middleware
      */
     public function addMiddleware($middleware): self
     {
@@ -235,17 +235,6 @@ class Route
         } else {
             $this->middleware[] = $middleware;
         }
-        return $this;
-    }
-
-    /**
-     * If the response should be streamed
-     *
-     * @return self
-     */
-    public function stream(): self
-    {
-        $this->is_streamed = true;
         return $this;
     }
 

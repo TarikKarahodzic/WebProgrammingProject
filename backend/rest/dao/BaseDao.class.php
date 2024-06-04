@@ -25,25 +25,86 @@ class BaseDao
         }
     }
 
-    protected function query($query, $params) {
-        $statement = $this->connection->prepare($query);
-        $statement -> execute($params);
-        return $statement -> fetchAll(PDO::FETCH_ASSOC);
+    protected function query($query, $params = [])
+    {
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute($params);
+        return $stmt;
     }
 
-    protected function query_unique($query, $params) {
-        $results = $this -> query($query, $params);
-        return reset($results);
+    function get_all()
+    {
+        $stmt = $this->query("SELECT * FROM " . $this->table);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    protected function execute($query, $params) {
-        $prepared_statement = $this -> connection -> prepare($query);
-        if($params) {
-            foreach ($params as $key => $param) {
-                $prepared_statement -> bindValue($key, $param);
-            }
+    function getById($id)
+    {
+        $stmt = $this->query("SELECT * FROM " . $this->table . " WHERE id = :id", ["id" => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function add($entity)
+    {
+        $query = "INSERT INTO " . $this->table . " (";
+        foreach ($entity as $column => $value) {
+            $query .= $column . ", ";
         }
-        $prepared_statement -> execute();
-        return $prepared_statement;
+        $query = substr($query, 0, -2);
+        $query .= ") VALUES (";
+        foreach ($entity as $column => $value) {
+            $query .= ":" . $column . ", ";
+        }
+        $query = substr($query, 0, -2);
+        $query .= ")";
+
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute($entity);
+        $entity['id'] = $this->connection->lastInsertId();
+        return $entity;
     }
+
+    public function delete($id)
+    {
+        $stmt = $this->connection->prepare("DELETE FROM " . $this->table . " WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
+
+    public function update($id, $entity, $id_column = "id")
+    {
+        $query = "UPDATE " . $this->table . " SET ";
+        foreach ($entity as $column => $value) {
+            $query .= $column . "= :" . $column . ", ";
+        }
+        $query = substr($query, 0, -2);
+        $query .= " WHERE $id_column = :id";
+
+        $stmt = $this->connection->prepare($query);
+        $entity['id'] = $id;
+        $stmt->execute($entity);
+    }
+
+    public function get_user_by_email($email) {
+        $stmt = $this->query("SELECT * FROM users WHERE user_email = :user_email",["user_email" => $email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function add_date($entity)
+{
+    // Construct the SQL query
+    $columns = implode(", ", array_keys($entity));
+    $values = ":" . implode(", :", array_keys($entity));
+
+    $query = "INSERT INTO " . $this->table . " ($columns) VALUES ($values)";
+
+    // Prepare and execute the SQL query
+    $stmt = $this->connection->prepare($query);
+    $stmt->execute($entity);
+
+    // Return the inserted entity with its ID
+    $entity['id'] = $this->connection->lastInsertId();
+    return $entity;
+}
+
 }

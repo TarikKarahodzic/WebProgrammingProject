@@ -1,16 +1,19 @@
 {
     "barbers": [
         {
+            "id": "1",
             "name": "Barber One",
             "phoneNumber": "+387 61 654 321",
             "image": "assets/img/hasbi.jpg"
         },
         {
+            "id": "2",
             "name": "Barber Two",
             "phoneNumber": "+387 62 654 321",
             "image": "assets/img/hasbi1.jpg"
         },
         {
+            "id": "3",
             "name": "Barber Three",
             "phoneNumber": "+387 63 654 321",
             "image": "assets/img/hasbi2.jpg"
@@ -18,12 +21,10 @@
     ],
     "users": [
         {
-            "name": "john Doe",
-            "username": "JohnDoe",
-            "email": "info@example.com",
-            "phoneNumber": "+387 64 123 456",
-            "password": "john123",
-            "image": "assets/img/profile.png"
+            "name": "Tarik Karahodzic",
+            "email": "tarik.karahodzic@stu.ibu.edu.ba",
+            "phoneNumber": "+387644035111",
+            "password": "tarik123"
         }
     ],
     "serviceTable": [
@@ -54,5 +55,4 @@
             }
         }
     ]
-    
 }

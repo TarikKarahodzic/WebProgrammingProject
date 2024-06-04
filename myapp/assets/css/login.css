@@ -1,9 +1,7 @@
-#profile-bg {
-    background: url('/assets/img/hair-bg.jpg');
-    background-position: center;
+body {
+    background: url('../img/hair-bg.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    margin-top: 70px;
 }
 
 .wrapper {
@@ -21,8 +19,9 @@
     border: 2px solid;
     border-radius: 15px;
     padding: 7.5em 2.5em 4em 2.5em;
-    color: #fff;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    color: #c6c3c3;
+    box-shadow: 0px 0px 3px 2px #c6c3c3;
+    margin-top: 80px;
 }
 
 .login-header {
@@ -33,15 +32,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #c6c3c3;
+    background: #c6c3c3;
     width: 140px;
     height: 70px;
     border-radius: 0 0 20px 20px;
 }
 
 .login-header span {
-    font-size: 30px;
-    color: black;
+    font-size: 25px;
+    color: white;
 }
 
 .input_box {
@@ -74,8 +73,8 @@
     transition: .2s;
 }
 
-.input-field:focus ~ .label,
-.input-field:valid ~ .label{
+.input-field:focus~.label,
+.input-field:valid~.label {
     position: absolute;
     top: -10px;
     left: 20px;
@@ -96,7 +95,8 @@
 .input-submit {
     width: 100%;
     height: 50px;
-    background: #ececec;
+    background: #c6c3c3;
+    color: rgb(92, 77, 66);
     font-size: 16px;
     font-weight: 500;
     border: none;
@@ -118,221 +118,11 @@
 }
 
 @media only screen and (max-width: 564px) {
-    .wrapper{
+    .wrapper {
         padding: 20px;
     }
+
     .login_box {
         padding: 7.5em 1.5em 4em 1.5em;
     }
-=======
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
-
-* {
-    padding-top: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-#loginBody {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(to top, rgba(92, 77, 66, 0.45) 100%, rgba(92, 77, 66, 0.45) 100%), url('../img/tttest.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-    font-family: "poppins", sans-serif;
-}
-
-.containerLogin {
-    background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-    overflow: hidden;
-    position: relative;
-}
-
-.containerLogin p {
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-    margin: 20px 0;
-}
-
-.containerLogin span {
-    font-size: 12px;
-}
-
-.containerLogin a {
-    text-decoration: none;
-    color: #fff;
-    margin: 15px 0 10px;
-    font-size: 13px;
-}
-
-.containerLogin form {
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    height: 100%;
-}
-
-.containerLogin form input {
-    background-color: #eee;
-    border: none;
-    width: 100%;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
-    outline: none;
-    width: 100%;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-.containerLogin button {
-    background-color: #0d03a0;
-    color: white;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.containerLogin button.hidden {
-    background-color: transparent;
-    border-color: white;
-}
-
-.form-containerLogin {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
-
-.sign-in {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.containerLogin.active .sign-in {
-    transform: translateX(100%);
-}
-
-
-.sign-up {
-    left: 0;
-    width: 50%;
-    z-index: 1;
-    opacity: 0;
-}
-
-.containerLogin.active .sign-up {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: move 0.6;
-}
-
-@keyframes move {
-
-    0%,
-    49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%,
-    100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.toggle-containerLogin {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: all 0.6s ease-in-out;
-    z-index: 100;
-}
-
-.containerLogin.active .toggle-containerLogin {
-    transform: translateX(-100%);
-}
-
-.toggle {
-    background: url('../img/hair-bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    left: -100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-    position: relative;
-}
-
-.toggle::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgba(92, 77, 66, 0.5);
-}
-
-.containerLogin.active .toggle {
-    transform: translateX(50%);
-}
-
-.toggle-panel {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    padding: 0 30px;
-    top: 0;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
-
-.toggle-left {
-    transform: translateX(-200%);
-}
-
-.containerLogin.active .toggle-left {
-    transform: translateX(0);
-}
-
-.toggle-right {
-    right: 0;
-    transform: translateX(0);
-}
-
-.containerLogin.active .toggle-right {
-    transform: translateX(0);
 }
