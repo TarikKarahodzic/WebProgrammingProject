@@ -4,19 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd61a0cb6fcf6ab3ffe7746c206409094
+class ComposerStaticInit65f95507d682e8083e5a4ce4042255f0
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '4cdafd4a5191caf078235e7dd119fdaf' => __DIR__ . '/..' . '/flightphp/core/flight/autoload.php',
+        '0ccdf99b8f62f02c52cba55802e0c2e7' => __DIR__ . '/..' . '/zircote/swagger-php/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'W' => 
-        array (
-            'Web\\' => 4,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
@@ -34,16 +29,13 @@ class ComposerStaticInitd61a0cb6fcf6ab3ffe7746c206409094
         ),
         'D' => 
         array (
+            'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Web\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/api',
-        ),
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
@@ -68,6 +60,10 @@ class ComposerStaticInitd61a0cb6fcf6ab3ffe7746c206409094
         array (
             0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
         ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/src',
@@ -85,9 +81,9 @@ class ComposerStaticInitd61a0cb6fcf6ab3ffe7746c206409094
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd61a0cb6fcf6ab3ffe7746c206409094::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd61a0cb6fcf6ab3ffe7746c206409094::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd61a0cb6fcf6ab3ffe7746c206409094::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit65f95507d682e8083e5a4ce4042255f0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit65f95507d682e8083e5a4ce4042255f0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit65f95507d682e8083e5a4ce4042255f0::$classMap;
 
         }, null, ClassLoader::class);
     }
